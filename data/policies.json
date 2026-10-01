@@ -1,0 +1,27 @@
+{
+  "shipping": {
+    "freeShippingThreshold": 150,
+    "freeShippingCurrency": "USD",
+    "standard": { "label": "Standard Shipping", "estimatedDaysMin": 3, "estimatedDaysMax": 5, "cost": 6.95 },
+    "express": { "label": "Express Shipping", "estimatedDaysMin": 1, "estimatedDaysMax": 2, "cost": 18.00 },
+    "carbonNeutral": true,
+    "notes": "Complimentary carbon-neutral standard shipping on orders over $150. Express shipping is available at checkout on all orders."
+  },
+  "returns": {
+    "windowDays": 30,
+    "condition": "Items must be unworn, unwashed, and in original packaging with tags attached.",
+    "freeReturns": true,
+    "exchanges": true,
+    "notes": "Returns and exchanges accepted within 30 days of shipment. Use our AI support assistant to stage a return or check status instantly."
+  },
+  "support": {
+    "email": "support@lunaapparel.com",
+    "chatAvailable": true,
+    "orderTracking": "Order status, tracking, cancellations, and returns can be handled instantly through the Luna AI Support Assistant in the bottom-right corner of the site."
+  },
+  "contact": {
+    "brand": "Luna Apparel",
+    "email": "support@lunaapparel.com",
+    "hours": "Monday to Friday, 9am to 6pm ET"
+  }
+}

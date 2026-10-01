@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna Apparel | Refined Minimalist Clothing</title>
+  <meta name="description" content="Premium, organic minimalist clothing staples designed for comfort and longevity. Shop our collection of organic linen shirts, heavy-weight cotton hoodies, and loungewear.">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Add the tResolv Luna Chatbot Configuration -->
+  <script>
+    window.tResolvConfig = {
+      brandId: "d082c4df-e49f-4fec-9476-f546f2523464",
+      botName: "Luna",
+      color: "#FFFFFF",
+      brandLabel: "AI Support"
+    };
+  </script>
+  <script src="https://backend.tresolv.online/widget.js" async></script>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary carbon-neutral shipping on orders over $150
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="header-container container">
+      <!-- Logo -->
+      <a href="#home" class="logo-link">Luna Apparel</a>
+      
+      <!-- Navigation Links -->
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#shop" class="nav-link">Shop</a>
+        <a href="#support" class="nav-link">Support</a>
+      </nav>
+      
+      <!-- Cart Icon Action -->
+      <div class="header-actions">
+        <button class="cart-icon-btn" onclick="openCartDrawer()" aria-label="Open shopping cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dynamic Page Viewport -->
+  <main id="app-viewport">
+    <!-- Content injected dynamically via app.js hash router -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid container">
+      <div class="footer-brand">
+        <h3>Luna</h3>
+        <p>Premium modern clothing brand. Clean editorial design, neutral colors, and high-quality materials.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Collection</h4>
+        <ul class="footer-links">
+          <li><a href="#shop?category=outerwear">Outerwear</a></li>
+          <li><a href="#shop?category=shirts">Shirts</a></li>
+          <li><a href="#shop?category=basics">Basics & Tees</a></li>
+          <li><a href="#shop?category=sets">Ribbed Sets</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="#support">Order Tracking</a></li>
+          <li><a href="#support">Returns & Exchanges</a></li>
+          <li><a href="#support">Shipping Info</a></li>
+          <li><a href="#support">Contact Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul class="footer-links">
+          <li><a href="#home" onclick="event.preventDefault();">Instagram</a></li>
+          <li><a href="#home" onclick="event.preventDefault();">Pinterest</a></li>
+          <li><a href="#home" onclick="event.preventDefault();">Lookbook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p class="footer-copy">&copy; 2026 Luna Apparel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Side Drawer -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Shopping Cart <span id="cart-drawer-count">(0)</span></h3>
+      <button class="cart-drawer-close" onclick="closeCartDrawer()" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-drawer-items-wrapper" id="cart-drawer-items">
+      <!-- Items dynamically populated here -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-drawer-subtotal">$0.00</span>
+      </div>
+      <p class="cart-drawer-notes">Shipping & duties calculated at checkout.</p>
+      <button class="btn btn-primary btn-block" id="cart-checkout-btn" onclick="openCheckoutModal()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Dialog Modal -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-modal-inner" id="checkout-modal-inner">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Close checkout">✕</button>
+      <h2 class="modal-title">Checkout</h2>
+      <p class="modal-subtitle">Confirm details to place your order (Simulated transaction)</p>
+      
+      <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+        <div class="form-group">
+          <label for="checkout-email">Email Address</label>
+          <input type="email" id="checkout-email" required class="form-input" placeholder="name@domain.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="checkout-name">Full Name</label>
+          <input type="text" id="checkout-name" required class="form-input" placeholder="First Last">
+        </div>
+        
+        <div class="form-group">
+          <label for="checkout-address">Shipping Address</label>
+          <input type="text" id="checkout-address" required class="form-input" placeholder="123 Street Name">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="form-group">
+            <label for="checkout-city">City</label>
+            <input type="text" id="checkout-city" required class="form-input" placeholder="New York">
+          </div>
+          <div class="form-group">
+            <label for="checkout-zip">ZIP / Postal Code</label>
+            <input type="text" id="checkout-zip" required class="form-input" placeholder="10001">
+          </div>
+        </div>
+
+        <div class="modal-totals-summary">
+          <div>
+            <span>Payment Total:</span>
+            <span id="checkout-modal-total">$0.00</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>
